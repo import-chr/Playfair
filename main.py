@@ -66,8 +66,8 @@ class PlayFair:
     
         return charar
     
-    def pairChars(self):
-        pairs = np.chararray(((math.ceil(len(Texto) / 2)) + 1, 2))
+    def pairChars(self, txt):
+        pairs = np.chararray(((math.ceil(len(txt) / 2)) + 1, 2))
         pairs[:] = 'X'
 
         return pairs
@@ -259,8 +259,8 @@ while True:
 
         playfair.showMtrx(charar)
 
-        pairs = playfair.pairChars()
-        ciphered = playfair.pairChars()
+        pairs = playfair.pairChars(Texto)
+        ciphered = playfair.pairChars(Texto)
 
         finalCipher = playfair.cipher(Texto, pairs, charar, ciphered)
 
@@ -289,8 +289,8 @@ while True:
 
         playfair.showMtrx(charar)
 
-        pairs = playfair.pairChars()
-        deciphered = playfair.pairChars()
+        pairs = playfair.pairChars(Texto)
+        deciphered = playfair.pairChars(Texto)
 
         finalDecipher = playfair.decipher(Texto, pairs, charar, deciphered)
 
